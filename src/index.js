@@ -22,7 +22,49 @@
 //   npm test
 
 // The `Jest` VS Code Extension can be installed so that the tests are detected
+// Replace with the code you'd like to run
 // and appear under the VS Code Testing panel.
 
-// Replace with the code you'd like to run
-console.log('Hello, World!');
+console.log("Hello, World!");
+4 + 5;
+console.log(4 + 3);
+
+const fizzBuzz = function (num) {
+  if (num % 15 === 0) {
+    return "FizzBuzz";
+  } else if (num % 3 === 0) {
+    return "Fizz";
+  } else if (num % 5 === 0) {
+    return "Buzz";
+  } else {
+    return num;
+  }
+};
+
+console.log(fizzBuzz(1));
+console.log(fizzBuzz(3));
+console.log(fizzBuzz(5));
+console.log(fizzBuzz(15));
+
+const calculateTotalPrice = function (order) {
+  let total = 0;
+
+  for (const item of order) {
+    total += item.price;
+  }
+  return total;
+};
+
+const myOrder = [
+  {
+    entre: "Fish Tacos",
+    price: 14.97,
+  },
+  {
+    entre: "Vegan Spaghetti",
+    price: 21.47,
+  },
+];
+
+const myTotal = calculateTotalPrice(myOrder);
+console.log(`The total is $${myTotal}`);
