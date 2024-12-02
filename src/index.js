@@ -1,3 +1,39 @@
+const axios = require('axios');
+require('dotenv').config();
+
+const api_key = process.env.api_key;
+axios.get('https://us1.locationiq.com/v1/search.php', {
+  params: {
+    key: api_key,
+    q: 'Dallas, TX',
+    format: 'json',
+  },
+})
+  .then((response) => {
+    console.log('Success');
+  })
+  .catch((error) => {
+    console.log('ERROR');
+    console.log(error.response.data);
+  });
+
+
+// axios
+//   .get('https://us1.locationiq.com/v1/search.php', {
+//     params: {
+//       key: process.env['api_key'],  // discussed below
+//       q: 'Seattle, Washington, USA',
+//       format: 'json',
+//     },
+//   })
+//   .then((response) => {
+//     console.log('success!', response.data);
+//   })
+//   .catch((error) => {
+//     console.log('error!', error.response.data);
+//   });
+
+
 // Use this file as a general scratch pad for running code.
 
 // Run in the terminal from the project directory with
@@ -25,46 +61,46 @@
 // Replace with the code you'd like to run
 // and appear under the VS Code Testing panel.
 
-console.log("Hello, World!");
-4 + 5;
-console.log(4 + 3);
+// console.log("Hello, World!");
+// 4 + 5;
+// console.log(4 + 3);
 
-const fizzBuzz = function (num) {
-  if (num % 15 === 0) {
-    return "FizzBuzz";
-  } else if (num % 3 === 0) {
-    return "Fizz";
-  } else if (num % 5 === 0) {
-    return "Buzz";
-  } else {
-    return num;
-  }
-};
+// const fizzBuzz = function (num) {
+//   if (num % 15 === 0) {
+//     return "FizzBuzz";
+//   } else if (num % 3 === 0) {
+//     return "Fizz";
+//   } else if (num % 5 === 0) {
+//     return "Buzz";
+//   } else {
+//     return num;
+//   }
+// };
 
-console.log(fizzBuzz(1));
-console.log(fizzBuzz(3));
-console.log(fizzBuzz(5));
-console.log(fizzBuzz(15));
+// console.log(fizzBuzz(1));
+// console.log(fizzBuzz(3));
+// console.log(fizzBuzz(5));
+// console.log(fizzBuzz(15));
 
-const calculateTotalPrice = function (order) {
-  let total = 0;
+// const calculateTotalPrice = function (order) {
+//   let total = 0;
 
-  for (const item of order) {
-    total += item.price;
-  }
-  return total;
-};
+//   for (const item of order) {
+//     total += item.price;
+//   }
+//   return total;
+// };
 
-const myOrder = [
-  {
-    entre: "Fish Tacos",
-    price: 14.97,
-  },
-  {
-    entre: "Vegan Spaghetti",
-    price: 21.47,
-  },
-];
+// const myOrder = [
+//   {
+//     entre: "Fish Tacos",
+//     price: 14.97,
+//   },
+//   {
+//     entre: "Vegan Spaghetti",
+//     price: 21.47,
+//   },
+// ];
 
-const myTotal = calculateTotalPrice(myOrder);
-console.log(`The total is $${myTotal}`);
+// const myTotal = calculateTotalPrice(myOrder);
+// console.log(`The total is $${myTotal}`);
